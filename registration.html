@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./registration.css">
+</head>
+<body>
+    <div id="registration">
+        <header>
+            <a href="/">
+                <img src="./assets/back.svg" alt="back">
+            </a>
+            <a href="/">
+                <img src="./assets/logo.svg" alt="logo">
+            </a>
+        </header>
+        <div class="top">
+            <h1>How amazing that you wanna give classes</h1>
+            <h3>The first step is to fulfill this registration form</h3>
+        </div>
+        <form action="">
+
+            <legend>
+                <h2>Your information</h2>
+            </legend>
+
+            <fieldset>
+
+                <div class="field">
+                    <label for="name">Your name</label>
+                    <input type="text" name="name">
+                </div>
+
+                <div class="field-group">
+
+                    <div class="field">
+                        <label for="pic">Link to you picture <span>(start with http://)</span></label>
+                        <input type="text" name="pic">
+                    </div>
+
+                    <div class="field">
+                        <label for="zap">Whatsapp</label>
+                        <input type="text" name="zap" placeholder="(   ) ___-___">
+                    </div>
+
+                </div>
+                
+                <div class="field">
+                    <label for="bio">Biography <span>(maximum 300 characters)</span></label>
+                    <textarea 
+                        name="bio" 
+                        cols="30" 
+                        rows="10"
+                    ></textarea>
+                </div>
+
+            </fieldset>
+
+            <legend>
+                <h2>About the class</h2>
+            </legend>
+
+            <fieldset>
+
+                <div class="field">
+                    <label for="topic">Topic</label>
+                    <select name="topic">
+                        <option>Please select what you want to teach</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="cost">Hourly cost of your classes</label>
+                    <select name="cost">
+                        <option value="">C$</option>
+                    </select>
+                </div>
+
+            </fieldset>
+
+            <legend id="dynamic">
+                <h2>Availability <button>+ New time</button></h2>
+            </legend>
+
+            <fieldset>
+
+                <div class="field-group-2">
+
+                    <div class="field">
+                        <label for="weekday">Weekday</label>
+                        <input type="text" name="weekday">
+                    </div>
+
+                    <div class="field">
+                        <label for="from">From</label>
+                        <input type="text" name="from">
+                    </div>
+
+                    <div class="field">
+                        <label for="to">To</label>
+                        <input type="text" name="to">
+                    </div>
+
+                </div>
+
+            </fieldset>
+
+            <div class="finish">
+                <span>
+                    <img src="./assets/warning.svg" alt="warning">
+                    <span>
+                        Important! <br>
+                        Fill up every field
+                    </span>
+                    
+                </span>
+                <button>Register</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+body {
+    position: absolute;
+}
+#page-home header {
+    background: #8257E5;
+    display: flex;
+    align-items: center;
+    padding: 118px 160px 59px 160px;
+}
+#page-home header span {
+    margin-right: 87px;
+}
+#page-home header span h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 36px;
+    line-height: 46px;
+    color: #D4C2FF;
+}
+#page-home .main {
+    padding: 58px 0 0 160px;
+    display: flex;
+    align-items: center;
+}
+#page-home .main h3 {
+    width: 200px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    color: #6A6180;
+    margin-right: 135px;
+}
+#page-home .main span {
+    width: 134px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: right;
+    color: #9C98A6;
+    margin-right: 53px;
+}
+#page-home .main a {
+    font-family: 'Archivo', sans-serif;
+    width: 282px;
+    height: 104px;
+    background: #8257E5;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 26px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+}
+#page-home .main a:hover {
+    background: #774FD1;
+}
+#page-home .main a img {
+    margin-right: 24px;
+}
+#page-home .main a + a {
+    background: #04D361;
+    width: 301px;
+}
+#page-home .main a + a:hover {
+    background: #04BF58;
+}
