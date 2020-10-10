@@ -59,6 +59,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-right: 16px;
+    transition: 400ms;
 }
 #page-home .main a:hover {
     background: #774FD1;
