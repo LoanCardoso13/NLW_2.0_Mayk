@@ -1,0 +1,26 @@
+{
+  "name": "nlw_2.0_mayk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoanCardoso13/NLW_2.0_Mayk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LoanCardoso13/NLW_2.0_Mayk/issues"
+  },
+  "homepage": "https://github.com/LoanCardoso13/NLW_2.0_Mayk#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

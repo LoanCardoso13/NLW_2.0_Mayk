@@ -5,7 +5,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: #8257E5 url("./assets/success-background.svg") no-repeat;
+    background: #8257E5 url("/assets/success-background.svg") no-repeat;
     background-position: 15vw 15vh;
     flex-direction: column;
     justify-content: center;
