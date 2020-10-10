@@ -23,7 +23,7 @@
                 <h1>These are the available tutors</h1>
             </div>
         </div>
-        <form action="">
+        <form action="#">
 
             <fieldset>
 
@@ -31,21 +31,32 @@
 
                     <div class="field">
                         <label for="subject">Subject</label>
-                        <select name="subject">
+                        <select 
+                            name="subject"
+                            onchange="ableWeekday()"
+                        >
                             <option value="">Select subject</option>
                         </select>
                     </div>
 
                     <div class="field">
                         <label for="weekday">Weekday</label>
-                        <select name="weekday">
+                        <select 
+                            name="weekday"
+                            disabled
+                            onchange="ableTime()"
+                        >
                             <option value="">Select weekday</option>
                         </select>
                     </div>
 
                     <div class="field">
                         <label for="time">Time</label>
-                        <select name="time">
+                        <select 
+                            name="time"
+                            disabled
+                            onchange='this.form.submit()'
+                        >
                             <option value="">Select time</option>
                         </select>
                     </div>
