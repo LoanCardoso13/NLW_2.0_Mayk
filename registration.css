@@ -13,9 +13,12 @@
 #registration header a + a img {
     width: 46px;
 }
-#registration .top {
+#registration .flow {
     background-color: #8257E5;
-    padding: 0 22.5%;
+}
+#registration .top {
+    width: 736px;
+    margin: 0 auto;
 }
 #registration .top h1 {
     font-family: 'Archivo', sans-serif;
@@ -92,7 +95,6 @@
 }
 #registration form fieldset .field-group-2 {
     display: flex;
-    margin-bottom: 40px;
 }
 #registration form fieldset .field-group-2 .field input {
     max-width: 320px;
@@ -154,6 +156,7 @@
     height: 136px;
     border-top: 1px solid #E6E6F0;
     padding: 56px 64px;
+    margin-top: 40px;
 }
 #registration form .finish span {
     display: flex;

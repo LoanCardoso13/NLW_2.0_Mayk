@@ -18,10 +18,13 @@
                 <img src="./assets/logo.svg" alt="logo">
             </a>
         </header>
-        <div class="top">
-            <h1>How amazing that you wanna give classes</h1>
-            <h3>The first step is to fulfill this registration form</h3>
+        <div class="flow">
+            <div class="top">
+                <h1>How amazing that you wanna give classes</h1>
+                <h3>The first step is to fulfill this registration form</h3>
+            </div>
         </div>
+
         <form action="./modal.html">
 
             <legend>
@@ -83,10 +86,10 @@
             </fieldset>
 
             <legend id="dynamic">
-                <h2>Availability <button>+ New time</button></h2>
+                <h2>Availability <button type="button" onclick="addRow()">+ New time</button></h2>
             </legend>
 
-            <fieldset>
+            <fieldset id="container">
 
                 <div class="field-group-2">
 
@@ -118,10 +121,10 @@
                     </span>
                     
                 </span>
-                <button id="registered">Register</button>
+                <button>Register</button>
             </div>
         </form>
     </div>
-    
+    <script src="./registration.js"></script>
 </body>
 </html>
