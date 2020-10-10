@@ -1,40 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proffy</title>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/main.css">
+{% extends "layout.html" %}
+
+{% set pageId = "page-home" %}
+
+
+{% block styles %}
     <link rel="stylesheet" href="/styles/page-home.css">
-</head>
-<body>
-    <div id="page-home">
-        <header>
-            <span>
-                <img src="/assets/logo.svg" alt="logo">
-                <h1>Your online studies platform.</h1>
-            </span>
-            <img src="/assets/landing.svg" alt="landing">
-        </header>
-        <div class="main">
-            <h3>
-                Be very welcome. <br>
-                <strong>What would you like to do?</strong>
-            </h3>
-            <span>
-                total of more than 283 connections already made
-                <img src="/assets/purple-heart.svg" alt="heart">    
-            </span>
-            <a href="/search-tutor">
-                <img src="/assets/study.svg" alt="study">
-                Study
-            </a>
-            <a href="/registration">
-                <img src="/assets/give-classes.svg" alt="give-classes">    
-                Give classes
-            </a>
-        </div>
+{% endblock styles %}
+
+{% block header %}
+    <header>
+        <span>
+            <img src="/assets/logo.svg" alt="logo">
+            <h1>Your online studies platform.</h1>
+        </span>
+        <img src="/assets/landing.svg" alt="landing">
+    </header>
+{% endblock header %}
+
+{% block content %}
+    <div class="main">
+        <h3>
+            Be very welcome. <br>
+            <strong>What would you like to do?</strong>
+        </h3>
+        <span>
+            total of more than 283 connections already made
+            <img src="/assets/purple-heart.svg" alt="heart">    
+        </span>
+        <a href="/search-tutor">
+            <img src="/assets/study.svg" alt="study">
+            Study
+        </a>
+        <a href="/registration">
+            <img src="/assets/give-classes.svg" alt="give-classes">    
+            Give classes
+        </a>
     </div>
-</body>
-</html>
+{% endblock content %}

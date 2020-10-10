@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "layout.html" %}
+
+{% block title %}
     <title>Registered!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/main.css">
+{% endblock title %}
+
+{% block styles %}
     <link rel="stylesheet" href="/styles/modal.css">
-</head>
-<body>
-    <div class="modal" id="modal">
+{% endblock styles %}
+
+{% block content %}
+    <div class="modal">
         <img src="/assets/success-check-icon.svg" alt="success">
         <h1>Registered!</h1>
         <p>
@@ -18,5 +18,4 @@
         </p>
         <a href="/search-tutor">Access database</a>
     </div>
-</body>
-</html>
+{% endblock content %}

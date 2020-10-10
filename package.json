@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/LoanCardoso13/NLW_2.0_Mayk#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.2",
+    "sqlite3": "^5.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
