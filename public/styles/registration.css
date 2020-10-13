@@ -96,14 +96,14 @@
 #registration form fieldset .field-group-2 {
     display: flex;
 }
-#registration form fieldset .field-group-2 .field input {
-    max-width: 320px;
+#registration form fieldset .field-group-2 .field select {
+    width: 320px;
 }
 #registration form fieldset .field-group-2 .field + .field {
     margin-left: 16px;
 }
-#registration form fieldset .field-group-2 .field + .field input {
-    max-width: 128px;
+#registration form fieldset .field-group-2 .field + .field select {
+    width: 128px;
 }
 #registration form fieldset .field label {
     font-family: 'Poppins', sans-serif;
@@ -127,13 +127,34 @@
     height: 56px;
     padding: 15px 24px;
     outline: none;
+    margin-bottom: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+}
+#registration form fieldset .field .selected {
+    color: black;
+}
+#registration form fieldset .field-group-2 {
+    color: black;
+}
+#registration form fieldset .field select {
     font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 26px;
     color: #C1BCCC;
-    margin-bottom: 24px;
+}
+#registration form fieldset .field input::placeholder {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #C1BCCC;
 }
 #registration form fieldset .field textarea {
     background: #FAFAFC;

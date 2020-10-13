@@ -73,17 +73,22 @@
         <fieldset>
 
             <div class="field">
-                <label for="topic">Topic</label>
-                <select name="topic">
-                    <option>Please select what you want to teach</option>
+                <label for="topic">Subject</label>
+                <select 
+                    name="topic"
+                    onchange="changeColor()"
+                >
+                    <option value="">Please select the subject you want to teach</option>
                 </select>
             </div>
 
             <div class="field">
                 <label for="cost">Hourly cost of your classes</label>
-                <select name="cost">
-                    <option value="">C$</option>
-                </select>
+                <input 
+                    type="text" 
+                    name="cost"
+                    placeholder="C$"
+                >
             </div>
 
         </fieldset>
@@ -98,17 +103,32 @@
 
                 <div class="field">
                     <label for="weekday">Weekday</label>
-                    <input type="text" name="weekday">
+                    <select 
+                        name="weekday"
+                        onchange="changeColor2()"
+                    >
+                        <option value="">Select weekday</option>
+                    </select>
                 </div>
 
                 <div class="field">
                     <label for="from">From</label>
-                    <input type="text" name="from">
+                    <select 
+                        name="from"
+                        onchange="changeColor2()"    
+                    >
+                        <option value="">Start</option>
+                    </select>
                 </div>
 
                 <div class="field">
                     <label for="to">To</label>
-                    <input type="text" name="to">
+                    <select 
+                        name="to"
+                        onchange="changeColor2()"    
+                    >
+                        <option value="">End</option>
+                    </select>
                 </div>
 
             </div>
