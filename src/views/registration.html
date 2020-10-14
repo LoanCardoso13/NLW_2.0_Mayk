@@ -28,7 +28,7 @@
 {% endblock header %}
 
 {% block content %}
-    <form action="/registered">
+    <form action="/registered" method="POST">
 
         <legend>
             <h2>Your information</h2>
@@ -44,13 +44,13 @@
             <div class="field-group">
 
                 <div class="field">
-                    <label for="pic">Link to you picture <span>(start with http://)</span></label>
-                    <input type="text" name="pic">
+                    <label for="image">Link to you picture <span>(start with http://)</span></label>
+                    <input type="text" name="image">
                 </div>
 
                 <div class="field">
-                    <label for="zap">Whatsapp</label>
-                    <input type="text" name="zap" placeholder="(   ) ___-___">
+                    <label for="whatsapp">Whatsapp</label>
+                    <input type="text" name="whatsapp" placeholder="(   ) ___-___">
                 </div>
 
             </div>
@@ -73,9 +73,9 @@
         <fieldset>
 
             <div class="field">
-                <label for="topic">Subject</label>
+                <label for="subject">Subject</label>
                 <select 
-                    name="topic"
+                    name="subject"
                     onchange="changeColor()"
                 >
                     <option value="">Please select the subject you want to teach</option>

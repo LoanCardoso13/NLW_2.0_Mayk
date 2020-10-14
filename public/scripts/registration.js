@@ -90,7 +90,7 @@ for (i = 0; i < 24; i++) {
     times.push(String(i) + 'h');
 }
 
-const topicElement = document.querySelector("select[name=topic]");
+const topicElement = document.querySelector("select[name=subject]");
 const weekdayElement = document.querySelector('select[name=weekday]');
 const fromElement = document.querySelector('select[name=from]');
 const toElement = document.querySelector('select[name=to]');
