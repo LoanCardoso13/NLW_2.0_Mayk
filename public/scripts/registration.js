@@ -85,10 +85,10 @@ weekdays = [
     'Friday'
 ];
 
-var times = []
+var times = [];
 for (i = 0; i < 24; i++) {
     times.push(String(i) + 'h');
-}
+};
 
 const topicElement = document.querySelector("select[name=subject]");
 const weekdayElement = document.querySelector('select[name=weekday]');
@@ -118,7 +118,6 @@ function changeColor() {
 
 function changeColor2() {
     var selectorElements = document.querySelectorAll("form fieldset .field-group-2 .field select");
-    console.log(selectorElements.length)
     for (i = 0; i < selectorElements.length; i++) {
         selectorElements[i].classList.add("selected");
     }
