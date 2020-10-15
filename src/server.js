@@ -12,7 +12,6 @@ nunjucks.configure('src/views', {
     noCache: false
 });
 
-// Habilitating req.body in the application 
 server.use(express.urlencoded({ extended: true }));
 
 server.get('/', (req, res) => {
@@ -66,9 +65,7 @@ server.post('/registered', (req, res) => {
             req.body.from,
             req.body.to
         ]
-        console.log(values);
-        // console.log(req.body.bio.replace(/(?:\r\n|\r|\n)/g, '<br>'));
-        // return res.render('index.html');
+
         function afterInsertData(err) {
             if(err) {
                 return console.log(err);
@@ -89,18 +86,14 @@ server.get('/search-tutor', (req, res) => {
     db.all(`SELECT * FROM tutors`, function(err,rows) {
         if(err) {
             return console.log(err);
-        }
-        // console.log(rows[0].weekday);
-        // console.log(rows[1].weekday);
-        // let container = [];
+        };
+
         for (i = 0; i < rows.length; i++) {
             rows[i].weekday = rows[i].weekday.split(",");
             rows[i].fromStart = rows[i].fromStart.split(",");
             rows[i].toEnd = rows[i].toEnd.split(",");
         };
-        // console.log(container);
-        // console.log(container[0]);
-        // console.log(container[1]);
+
         weekdays = [
             'Monday',
             'Tuesday',
@@ -108,14 +101,49 @@ server.get('/search-tutor', (req, res) => {
             'Thursday',
             'Friday'
         ];
-        console.log(rows);
-        return res.render("search-results.html", {tutors: rows, weekdays});    
+
+        return res.render("search-results.html", {tutors: rows, weekdays});
+
     });
 
 });
 
-// server.get('/registered', (req, res) => {
-//     return res.render('modal.html');
-// }); 
+server.get('/narrow-search', (req, res) => {
+
+    console.log(req.query);
+    day = req.query.weekday;
+    subject = req.query.subject;
+
+    const query = `
+    SELECT * FROM tutors
+    WHERE weekday LIKE '%${day}%'
+    AND subject='${subject}'
+    ` 
+
+    db.all(query, (err, rows) => {
+        if (err) {
+            return console.log(err);
+        }
+
+        for (i = 0; i < rows.length; i++) {
+            rows[i].weekday = rows[i].weekday.split(",");
+            rows[i].fromStart = rows[i].fromStart.split(",");
+            rows[i].toEnd = rows[i].toEnd.split(",");
+        };
+    
+        weekdays = [
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday'
+        ];
+
+        console.log(rows);
+        return res.render('search-results.html', {tutors: rows, weekdays});
+
+    });
+
+});
 
 server.listen(3000);
