@@ -38,19 +38,23 @@
 
             <div class="field">
                 <label for="name">Your name</label>
-                <input type="text" name="name">
+                <input type="text" name="name" required>
             </div>
 
             <div class="field-group">
 
                 <div class="field">
                     <label for="image">Link to you picture <span>(start with http://)</span></label>
-                    <input type="text" name="image">
+                    <input type="text" name="image" required>
                 </div>
 
                 <div class="field">
                     <label for="whatsapp">Whatsapp</label>
-                    <input type="text" name="whatsapp" placeholder="(   ) ___-___">
+                    <input type="text" 
+                        name="whatsapp" 
+                        placeholder="(   ) ___-___"
+                        required
+                    >
                 </div>
 
             </div>
@@ -77,6 +81,7 @@
                 <select 
                     name="subject"
                     onchange="changeColor()"
+                    required
                 >
                     <option value="">Please select the subject you want to teach</option>
                 </select>
@@ -88,6 +93,7 @@
                     type="text" 
                     name="cost"
                     placeholder="C$"
+                    required
                 >
             </div>
 
@@ -106,6 +112,7 @@
                     <select 
                         name="weekday"
                         onchange="changeColor2()"
+                        required
                     >
                         <option value="">Select weekday</option>
                     </select>
@@ -115,7 +122,8 @@
                     <label for="from">From</label>
                     <select 
                         name="from"
-                        onchange="changeColor2()"    
+                        onchange="changeColor2()"
+                        required  
                     >
                         <option value="">Start</option>
                     </select>
@@ -125,7 +133,8 @@
                     <label for="to">To</label>
                     <select 
                         name="to"
-                        onchange="changeColor2()"    
+                        onchange="changeColor2()"
+                        required
                     >
                         <option value="">End</option>
                     </select>
