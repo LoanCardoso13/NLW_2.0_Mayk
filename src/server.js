@@ -70,7 +70,6 @@ server.post('/registered', (req, res) => {
             if(err) {
                 return console.log(err);
             }
-            console.log(this);
             return res.render("modal.html");
         }
     
@@ -110,7 +109,6 @@ server.get('/search-tutor', (req, res) => {
 
 server.get('/narrow-search', (req, res) => {
 
-    console.log(req.query);
     day = req.query.weekday;
     subject = req.query.subject;
 
@@ -139,7 +137,6 @@ server.get('/narrow-search', (req, res) => {
             'Friday'
         ];
 
-        console.log(rows);
         return res.render('search-results.html', {tutors: rows, weekdays});
 
     });
