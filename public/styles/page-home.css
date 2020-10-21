@@ -1,76 +1,111 @@
 body {
+    background: var(--color-primary);
+    height: 100vh;
+}
+body::after {
+    content: "";
     position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 293px;
+    background: #F0F0F7;
+    z-index: -1;
 }
-#page-home header {
-    background: #8257E5;
+#page-home {
     display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
-    padding: 118px 160px 59px 160px;
+    height: 100%;
 }
-#page-home header span {
-    margin-right: 87px;
+#page-home #container {
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 293px;
+    grid-template-areas: 
+    "proffy proffy image image"
+    "welcome heart button button";
+    grid-row-gap: 25px;
+    padding-bottom: 35px;
 }
-#page-home header span h1 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 36px;
-    line-height: 46px;
-    color: #D4C2FF;
-}
-#page-home .main {
-    padding: 58px 0 0 160px;
+.logo-container {
+    grid-area: proffy;
     display: flex;
-    align-items: center;
-}
-#page-home .main h3 {
-    width: 200px;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 30px;
-    color: #6A6180;
-    margin-right: 135px;
-}
-#page-home .main span {
-    width: 134px;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 20px;
-    text-align: right;
-    color: #9C98A6;
-    margin-right: 53px;
-}
-#page-home .main a {
-    font-family: 'Archivo', sans-serif;
-    width: 282px;
-    height: 104px;
-    background: #8257E5;
-    border-radius: 8px;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 26px;
-    color: #FFFFFF;
-    display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+}
+.hero-image {
+    grid-area: image;
+    width: -webkit-fill-available;
+}
+.welcome {
+    grid-area: welcome;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.heart {
+    grid-area: heart;
+    display: flex;
+    align-items: center;
+}
+.buttons-container {
+    grid-area: button;
+    display: flex;
+    align-items: center;
+}
+#page-home #container .logo-container img {
+    align-self: flex-start;
+}
+#page-home #container .logo-container p {
+    font-size: 2.5rem;
+    line-height: 3.2rem;
+    color: var(--color-text-in-primary);
+    margin-top: 8px;
+}
+#page-home #container p.welcome {
+    width: 200px;
+    font-size: 1.3rem;
+    color: var(--color-text-base);
+}
+#page-home #container p.heart {
+    width: 100%;
+    font-size: .8rem;
+    text-align: right;
+    color: var(--color-text-complement);
+    padding-right: 53px;
+}
+#page-home #container p.heart img {
+    margin-top: 18px;
+    margin-left: 5px;
+}
+#page-home #container .buttons-container a {
+    font-family: 'Archivo', sans-serif;
+    padding: 32px 64px;
+    height: 104px;
+    background: var(--color-primary);
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: var(--color-button-text);
+    display: flex;
+    align-items: center;
     margin-right: 16px;
-    transition: 400ms;
+    transition: background 400ms;
 }
-#page-home .main a:hover {
-    background: #774FD1;
+#page-home #container .buttons-container a:hover {
+    background: var(--color-primary-dark);
 }
-#page-home .main a img {
+#page-home #container .buttons-container a img {
     margin-right: 24px;
 }
-#page-home .main a + a {
-    background: #04D361;
-    width: 301px;
+#page-home #container .buttons-container a + a {
+    background: var(--color-secondary);
+    /* width: 301px; */
 }
-#page-home .main a + a:hover {
-    background: #04BF58;
+#page-home #container .buttons-container a + a:hover {
+    background: var(--color-secondary-dark);
 }

@@ -7,33 +7,38 @@
     <link rel="stylesheet" href="/styles/page-home.css">
 {% endblock styles %}
 
-{% block header %}
-    <header>
-        <span>
-            <img src="/assets/logo.svg" alt="logo">
-            <h1>Your online studies platform.</h1>
-        </span>
-        <img src="/assets/landing.svg" alt="landing">
-    </header>
-{% endblock header %}
-
 {% block content %}
-    <div class="main">
-        <h3>
+
+    <div id="container">
+
+            <div class="logo-container">
+                <img src="/assets/logo.svg" alt="logo">
+                <p>Your online studies platform.</p>
+            </div>
+
+            <img class="hero-image" src="/assets/landing.svg" alt="online studies platform">
+
+        <p class="welcome">
             Be very welcome. <br>
             <strong>What would you like to do?</strong>
-        </h3>
-        <span>
+        </p>
+
+        <p class="heart">
             total of more than 283 connections already made
             <img src="/assets/purple-heart.svg" alt="heart">    
-        </span>
-        <a href="/search-tutor">
-            <img src="/assets/study.svg" alt="study">
-            Study
-        </a>
-        <a href="/registration">
-            <img src="/assets/give-classes.svg" alt="give-classes">    
-            Give classes
-        </a>
+        </p>
+
+        <div class="buttons-container">
+            <a href="/search-tutor">
+                <img src="/assets/study.svg" alt="study">
+                Study
+            </a>
+            <a href="/registration">
+                <img src="/assets/give-classes.svg" alt="give-classes">    
+                Give classes
+            </a>
+        </div>
+
     </div>
+
 {% endblock content %}

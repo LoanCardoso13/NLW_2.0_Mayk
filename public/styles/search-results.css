@@ -106,7 +106,7 @@ h2, h3, h4, h5, h6, p {
     color: #32264D;
     margin: 4px 0;
 }
-#search-results .cards .card .identif span h6 {
+#search-results .cards .card .identif span p {
     margin: 4px 0;
     font-family: 'Poppins', sans-serif;
     font-style: normal;
