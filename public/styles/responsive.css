@@ -37,9 +37,19 @@
     div#page-home div#container .hero-image {
         width: 100%;
     }
-    div#page-home div#container .welcome,
-    div#page-home div#container .heart {
+    div#page-home div#container .welcome {
         display: none;
+    }
+    div#page-home div#container .heart {
+        position: absolute;
+        bottom: 1rem;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+    div#page-home div#container .heart img {
+        margin: 0;
+        margin-left: .25rem;
     }
     div#page-home div#container .buttons-container a {
         background-color: var(--color-primary-lighter);
