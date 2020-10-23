@@ -1,4 +1,4 @@
-@media (max-width: 1200px) {
+@media (max-width: 1200px), (max-height: 700px) {
     .logo-container {
         padding: 1rem;
     }
@@ -29,12 +29,13 @@
     }
     div#page-home div#container .logo-container img {
         align-self: center;
+        width: inherit;
     }
     div#page-home div#container .logo-container p {
         text-align: center;
     }
     div#page-home div#container .hero-image {
-        width: auto;
+        width: 100%;
     }
     div#page-home div#container .welcome,
     div#page-home div#container .heart {
@@ -53,4 +54,9 @@
     div#page-home div#container .buttons-container a + a:hover {
         background-color: var(--color-secondary-dark);
     }
+}
+@media (min-height: 900px) {
+    html body {
+        height: 100vh;
+    }    
 }

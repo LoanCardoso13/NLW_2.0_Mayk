@@ -84,7 +84,8 @@ body::after {
 #page-home #container .buttons-container a {
     font-family: 'Archivo', sans-serif;
     padding: 32px 64px;
-    height: 104px;
+    height: 7rem;
+    /* width: 100%; */
     background: var(--color-primary);
     border-radius: 8px;
     font-weight: bold;
