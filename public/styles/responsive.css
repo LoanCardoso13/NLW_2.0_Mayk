@@ -41,7 +41,8 @@
         display: none;
     }
     div#page-home div#container .heart {
-        position: absolute;
+        position: static;
+        order: 2;
         bottom: 1rem;
         align-items: center;
         justify-content: center;
