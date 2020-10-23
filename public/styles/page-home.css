@@ -14,7 +14,6 @@ body::after {
 }
 #page-home {
     display: flex;
-    flex: 1;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
@@ -104,7 +103,6 @@ body::after {
 }
 #page-home #container .buttons-container a + a {
     background: var(--color-secondary);
-    /* width: 301px; */
 }
 #page-home #container .buttons-container a + a:hover {
     background: var(--color-secondary-dark);
