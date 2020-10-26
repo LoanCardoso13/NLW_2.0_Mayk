@@ -49,6 +49,17 @@ h2, h3, h4, h5, h6, p {
 #search-results form fieldset .field-group .field {
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+#search-results form fieldset .field-group .field:focus-within::after {
+    content: "";
+    width: calc(100% - 3.2rem);
+    height: 2px;
+    background-color: var(--color-primary-light);
+    position: absolute;
+    left: 1.1rem;
+    right: 2.1rem;
+    bottom: 0;
 }
 #search-results form fieldset .field-group .field label {
     font-size: .87rem;
