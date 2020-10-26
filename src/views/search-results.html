@@ -37,7 +37,6 @@
                     <label for="subject">Subject</label>
                     <select 
                         name="subject"
-                        onchange="ableWeekday()"
                     >
                         <option value="">Select subject</option>
                     </select>
@@ -47,8 +46,6 @@
                     <label for="weekday">Weekday</label>
                     <select 
                         name="weekday"
-                        disabled
-                        onchange="ableTime()"
                     >
                         <option value="">Select weekday</option>
                     </select>
@@ -56,13 +53,15 @@
 
                 <div class="field">
                     <label for="time">Time</label>
-                    <select 
+                    <input 
+                        type="time"
                         name="time"
-                        disabled
                         onchange='this.form.submit()'
                     >
-                        <option value="">Select time</option>
-                    </select>
+                </div>
+
+                <div class="field filter">
+                    <button type="submit">Filter</button>
                 </div>
 
             </div>

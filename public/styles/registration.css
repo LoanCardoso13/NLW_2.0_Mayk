@@ -163,6 +163,8 @@
     height: 168px;
     padding: 15px 24px;
     outline: none;
+    margin-bottom: 24px;
+    resize: vertical;
 }
 #registration form .finish {
     display: flex;

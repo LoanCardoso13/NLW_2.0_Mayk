@@ -6,39 +6,36 @@ h2, h3, h4, h5, h6, p {
     flex-direction: column;
 }
 #search-results header {
-    background: #774DD6;
-    height: 64px;
+    background: var(--color-primary-dark);
+    height: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 10%;
 }
 #search-results header a + a img {
-    width: 46px;
+    width: 3rem;
 }
 #search-results .top {
     display: flex;
     justify-content: center;
 
-    background-color: #8257E5;
+    background-color: var(--color-primary);
 }
 #search-results .top .flow {
-    width: 736px;
+    width: 46rem;
 }
 #search-results .top h1 {
-    font-family: 'Archivo', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 42px;
-    color: #FFFFFF;
+    font-size: 2.25rem;
+    line-height: 2.65rem;
+    color: var(--color-box-base);
     width: 65%;
-    margin-top: 64px;
-    margin-bottom: 108px;
+    margin-top: 4rem;
+    margin-bottom: 6.8rem;
 }
 #search-results form {
-    max-width: 736px;
-    margin: -56px auto 68px auto;
+    width: 46rem;
+    margin: -3.5rem auto 4.2rem auto;
 }
 #search-results form fieldset {
     margin: 0;
@@ -46,121 +43,120 @@ h2, h3, h4, h5, h6, p {
     border: none;
 }
 #search-results form fieldset .field-group {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 #search-results form fieldset .field-group .field {
     display: flex;
     flex-direction: column;
 }
 #search-results form fieldset .field-group .field label {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
-    color: #D4C2FF;
-    margin-bottom: 8px;
+    font-size: .87rem;
+    line-height: 1.5rem;
+    color: var(--color-text-in-primary);
+    margin-bottom: .5rem;
 }
-#search-results form fieldset .field-group .field select {
-    height: 56px;
-    background: #FAFAFC;
-    border: 1px solid #E6E6F0;
+#search-results form fieldset .field-group .field select,
+#search-results form fieldset .field-group .field input {
+    height: 3.5rem;
+    background: var(--color-box-footer);
+    border: 1px solid var(--color-line-in-white);
     box-sizing: border-box;
-    border-radius: 8px;
-    padding: 15px 24px;
+    border-radius: .5rem;
+    padding: 1rem 1.5rem;
     outline: none;
-    margin-right: 16px;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 26px;
-    color: #6A6180;
-    width: 235px;
+    margin-right: 1rem;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    color: var(--color-text-base);
+}
+#search-results form fieldset .field-group .filter {
+    justify-content: flex-end;
+}
+#search-results form fieldset .field-group .field button {
+    background: #04D361;
+    border-radius: .5rem;
+    height: 3.5rem;
+    cursor: pointer;
+    border: none;
+    transition: 400ms;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    color: var(--color-box-base);
+}
+#search-results form fieldset .field-group .field button:hover {
+    background: #04BF58;
 }
 #search-results .cards {
-    width: 736px;
-    margin: 0 auto 130px auto;
+    width: 46rem;
+    margin: 0 auto 8.125rem auto;
 }
 #search-results .cards .card {
-    background-color: white;
-    border-radius: 8px;
-    padding: 32px 32px 0 32px;
-    margin-bottom: 24px;
+    background-color: var(--color-box-base);
+    border-radius: .5rem;
+    padding: 2rem 2rem 0 2rem;
+    margin-bottom: 1.5rem;
 }
 #search-results .cards .card .identif {
     display: flex;
 }
 #search-results .cards .card .identif img {
-    width: 80px;
-    height: 80px;
-    border-radius: 40px;
-    margin-right: 24px;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 2.5rem;
+    margin-right: 1.5rem;
 }
 #search-results .cards .card .identif span h2 {
-    font-family: 'Archivo', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 25px;
-    color: #32264D;
-    margin: 4px 0;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    color: var(--color-text-title);
+    margin: .25rem 0;
 }
 #search-results .cards .card .identif span p {
-    margin: 4px 0;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 26px;
-    color: #6A6180;
+    margin: .25rem 0;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    color: var(-color-text-base);
 }
 #search-results .cards .card .presentation {
-    margin: 32px 0;
+    margin: 2rem 0;
 }
 #search-results .cards .card .presentation p {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 26px;
-    color: #6A6180;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    color: var(-color-text-base);
 }
 #search-results .cards .card .time-table {
     display: flex;
-    margin-bottom: 32px;
+    margin-bottom: 2rem;
 }
 #search-results .cards .card .time-table .weekday {
-    width: 136px;
-    margin-right: 16px;
-    background: #FAFAFC;
-    border: 1px solid #E6E6F0;
+    width: 8.5rem;
+    margin-right: 1rem;
+    background: var(--color-box-footer);
+    border: 1px solid var(--color-line-in-white);
     box-sizing: border-box;
-    border-radius: 8px;
-    padding: 16px;
+    border-radius: .5rem;
+    padding: 1rem;
 }
 #search-results .cards .card .time-table .weekday span {
     display: flex;
     flex-direction: column;
 }
 #search-results .cards .card .time-table .weekday span p {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 20px;
-    color: #9C98A6;
+    font-size: .75rem;
+    line-height: 1.25rem;
+    color: var(--color-text-complement);
 }
 #search-results .cards .card .time-table .weekday span h3 {
-    font-family: 'Archivo', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 26px;
-    color: #6A6180;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    color: var(--color-text-base);
 }
 #search-results .cards .card .time-table .weekday span + span {
-    margin-top: 12px;
+    margin-top: .75rem;
 }
 #search-results .cards .card .time-table .notChosen {
     opacity: .4;
@@ -170,57 +166,50 @@ h2, h3, h4, h5, h6, p {
     justify-content: space-between;
     align-items: center;
 
-    background: #FAFAFC;
-    border-radius: 0px 0px 8px 8px;
-    width: 736px;
-    height: 120px; 
+    background: var(--color-box-footer);
+    border-radius: 0px 0px .5rem .5rem;
+    width: 46rem;
+    height: 7.5rem; 
     position: relative;
-    left: -32px;
-    border-top: 1px solid #E6E6F0;
-    padding: 0 32px;
+    left: -2rem;
+    border-top: 1px solid var(--color-line-in-white);
+    padding: 0 2rem;
 }
 #search-results .cards .card .finish span {
     display: flex;
 }
 #search-results .cards .card .finish span p {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 20px;
-    color: #9C98A6;
-    margin-right: 16px;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    color: var(--color-text-complement);
+    margin-right: 1rem;
 }
 #search-results .cards .card .finish span h2 {
-    font-family: 'Archivo', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 26px;
-    color: #8257E5;
+    font-size: 1.25rem;
+    line-height: 1.6rem;
+    color: var(--color-primary);
 }
 #search-results .cards .card .finish button {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background: #04D361;
-    border-radius: 8px;
+    background: var(--color-secondary);
+    border-radius: .5rem;
     border: none;
-    width: 250px;
-    height: 56px;
+    width: 15.625rem;
+    height: 3.5rem;
     font-family: 'Archivo', sans-serif;
-    font-style: normal;
     font-weight: 600;
-    font-size: 16px;
-    line-height: 26px;
-    color: #FFFFFF;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    color: var(--color-box-base);
     cursor: pointer;
-    transition: 400ms;
+    transition: background 400ms;
 }
 #search-results .cards .card .finish button:hover {
-    background-color: #04BF58;
+    background-color: var(--color-secondary-dark);
 }
 #search-results .cards .card .finish button img {
-    margin-right: 16px;
+    margin-right: 1rem;
 }

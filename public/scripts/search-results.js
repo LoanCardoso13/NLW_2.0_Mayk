@@ -37,13 +37,13 @@ for (time of times) {
     timeElement.innerHTML += `<option value="${time}">${time}</option>`
 }
 
-weekdayElement.style.opacity = "1.0";
-timeElement.style.opacity = "1.0";
+// weekdayElement.style.opacity = "1.0";
+// timeElement.style.opacity = "1.0";
 
-function ableWeekday() {
-    weekdayElement.disabled = false;
-}
+// function ableWeekday() {
+//     weekdayElement.disabled = false;
+// }
 
-function ableTime() {
-    timeElement.disabled = false;
-}
+// function ableTime() {
+//     timeElement.disabled = false;
+// }
