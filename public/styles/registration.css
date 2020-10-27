@@ -11,6 +11,9 @@
     right: 1.6rem;
     bottom: 1.5rem;
 }
+.field-group-2 .field input {
+    color: var(--color-small-info);
+}
 #registration {
     display: flex;
     flex-direction: column;
@@ -54,12 +57,14 @@
     margin: -3.5rem auto 3.5rem auto;
     background-color: var(--color-box-base);
     border-radius: .5rem;
-    padding: 3.5rem 4rem 0 4rem;
+    padding: 0 4rem;
 }
-#registration form legend {
+#registration form fieldset legend {
     margin-bottom: 1.5rem;
+    padding-top: 2.5rem;
+    width: 100%;
 }
-#registration form legend h2 {
+#registration form fieldset legend h2 {
     padding: 0 0 1rem 0;
     font-weight: 600;
     font-size: 1.5rem;
@@ -83,8 +88,6 @@
 }
 #registration form fieldset {
     border: none;
-    padding: 0;
-    margin: 0;
 }
 #registration form fieldset .field {
     display: flex;
@@ -101,16 +104,9 @@
     margin-left: 2rem;
 }
 #registration form fieldset .field-group-2 {
-    display: flex;
-}
-#registration form fieldset .field-group-2 .field select {
-    width: 20rem;
-}
-#registration form fieldset .field-group-2 .field + .field {
-    margin-left: 1rem;
-}
-#registration form fieldset .field-group-2 .field + .field select {
-    width: 8rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    column-gap: 1.6rem;
 }
 #registration form fieldset .field label {
     font-size: .875rem;
@@ -138,14 +134,7 @@
 #registration form fieldset .field .selected {
     color: black;
 }
-#registration form fieldset .field-group-2 {
-    color: black;
-}
-#registration form fieldset .field select {
-    font-size: 1rem;
-    line-height: 1.625rem;
-    color: var(--color-small-info);
-}
+#registration form fieldset .field select,
 #registration form fieldset .field input::placeholder {
     font-size: 1rem;
     line-height: 1.625rem;

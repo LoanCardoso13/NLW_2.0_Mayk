@@ -30,11 +30,11 @@
 {% block content %}
     <form action="/registered" method="POST">
 
-        <legend>
-            <h2>Your information</h2>
-        </legend>
-
         <fieldset>
+
+            <legend>
+                <h2>Your information</h2>
+            </legend>
 
             <div class="field">
                 <label for="name">Your name</label>
@@ -70,11 +70,11 @@
 
         </fieldset>
 
-        <legend>
-            <h2>About the class</h2>
-        </legend>
-
         <fieldset>
+
+            <legend>
+                <h2>About the class</h2>
+            </legend>
 
             <div class="field">
                 <label for="subject">Subject</label>
@@ -84,6 +84,13 @@
                     required
                 >
                     <option value="">Please select the subject you want to teach</option>
+                    <option value="Biology">Biology</option>
+                    <option value="Math">Math</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="English">English</option>
+                    <option value="History">History</option>
+                    <option value="Geography">Geography</option>
                 </select>
             </div>
 
@@ -99,45 +106,62 @@
 
         </fieldset>
 
-        <legend id="dynamic">
-            <h2>Availability <button type="button" onclick="addRow()">+ New time</button></h2>
-        </legend>
-
         <fieldset id="container">
+
+            <legend id="dynamic">
+                <h2>Availability <button type="button" onclick="addRow()">+ New time</button></h2>
+            </legend>
 
             <div class="field-group-2">
 
                 <div class="field">
                     <label for="weekday">Weekday</label>
                     <select 
-                        name="weekday"
+                        name="weekday[]"
                         onchange="changeColor2()"
                         required
                     >
                         <option value="">Select weekday</option>
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
                     </select>
                 </div>
 
                 <div class="field">
                     <label for="from">From</label>
-                    <select 
+                    {# <select 
                         name="from"
                         onchange="changeColor2()"
                         required  
                     >
                         <option value="">Start</option>
-                    </select>
+                    </select> #}
+                    <input 
+                        type="time"
+                        name="from[]"
+                        onchange="changeColor3()"
+                        required
+                    >
                 </div>
 
                 <div class="field">
                     <label for="to">To</label>
-                    <select 
+                    {# <select 
                         name="to"
                         onchange="changeColor2()"
                         required
                     >
                         <option value="">End</option>
-                    </select>
+                    </select> #}
+                    <input 
+                        type="time"
+                        name="to[]"
+                        onchange="changeColor3()"
+                        required
+                    >
                 </div>
 
             </div>
