@@ -71,3 +71,90 @@
         height: 100vh;
     }    
 }
+@media (max-width: 750px) {
+    #registration {
+        width: 100vw;
+    }
+    #registration .flow {
+        padding: 0 4rem;
+    }
+    #registration .flow .top {
+        width: auto !important;
+    }
+    #registration .flow .top h1,
+    #registration .flow .top p {
+        width: auto;
+    }
+    #registration form {
+        width: 100% !important;
+    }
+    #registration form fieldset .field-group {
+        flex-direction: column;
+    }
+    #registration form fieldset .field-group .field + .field {
+        margin-left: 0 !important;
+    }
+    #registration form .finish {
+        width: 100vw !important;
+        height: auto !important;
+        position: relative !important;
+        flex-direction: column;
+        padding: 1rem 4rem!important;
+
+    }
+    #registration form .finish span {
+        margin: 1rem 0;
+    }
+    #registration form .finish button {
+        width: 100% !important;
+        margin-bottom: 2rem;
+    }
+    #registration form fieldset .field-group-2 {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    #search-results .top h1,
+    #search-results form,
+    #search-results .cards {
+        width: 100% !important;
+        padding: 0 10% !important;
+    }
+    #search-results form fieldset .field-group {
+        display: flex !important;
+        flex-direction: column;
+    }
+    #search-results .top {
+        height: 35rem;
+    }
+    #search-results form {
+        margin: -26rem auto 4.2rem auto !important;
+    }
+    #search-results form fieldset .field-group .field {
+        margin-bottom: 1rem;
+    }
+    #search-results form fieldset .field-group .field select, 
+    #search-results form fieldset .field-group .field input {
+        margin-right: 0 !important;
+    }
+    #search-results form fieldset .field-group .filter {
+        margin-top: 1rem;
+    }
+    #search-results .cards .card {
+        padding: 2rem 5% 0 5% !important;
+    }
+    #search-results .cards .card .time-table {
+        display: none !important;
+    }
+    #search-results .cards .card .finish {
+        flex-direction: column;
+        justify-content: space-evenly !important;
+        left: -5.5% !important;
+        width: 111% !important;
+    }
+}
+@media (max-width: 330px) {
+    #search-results .top {
+        height: 38rem;
+    }
+}
