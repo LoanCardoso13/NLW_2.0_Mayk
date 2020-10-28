@@ -47,6 +47,7 @@
         align-items: center;
         justify-content: center;
         padding: 0;
+        color: var(--color-text-in-primary);
     }
     div#page-home div#container .heart img {
         margin: 0;
