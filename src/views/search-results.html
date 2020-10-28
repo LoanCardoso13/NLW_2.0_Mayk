@@ -123,10 +123,14 @@
                         <p>Price/hour</p>
                         <h2>C$ {{ tutor.cost }}</h2>
                     </span>
-                    <button>
+                    <a 
+                        href="https://api.whatsapp.com/send?1=en_US&phone=1{{ tutor.whatsapp }}&text=I am interested in your {{ tutor.subject }} class {{ tutor.name }}" 
+                        target="_blank"
+                        class="button"
+                    >
                         <img src="./assets/whatsapp.svg" alt="whatsapp">
-                        Contact me 
-                    </button>
+                        Contact me
+                    </a>
                 </div>
             </div>
         {% endfor %}

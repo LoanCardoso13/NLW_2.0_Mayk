@@ -200,7 +200,7 @@ h2, h3, h4, h5, h6, p {
     line-height: 1.6rem;
     color: var(--color-primary);
 }
-#search-results .cards .card .finish button {
+#search-results .cards .card .finish .button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -218,9 +218,9 @@ h2, h3, h4, h5, h6, p {
     cursor: pointer;
     transition: background 400ms;
 }
-#search-results .cards .card .finish button:hover {
+#search-results .cards .card .finish .button:hover {
     background-color: var(--color-secondary-dark);
 }
-#search-results .cards .card .finish button img {
+#search-results .cards .card .finish .button img {
     margin-right: 1rem;
 }
