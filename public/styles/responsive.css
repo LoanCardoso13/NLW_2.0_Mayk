@@ -159,3 +159,17 @@
         height: 38rem;
     }
 }
+@media (max-width: 600px) {
+    .buttons-container {
+        flex-direction: column;
+    }
+    .buttons-container > a {
+        margin-bottom: 1rem;
+        margin-right: 0 !important;
+        width: 100%;
+    }
+    .buttons-container a {
+        padding: 0 !important;
+        justify-content: center;
+    }
+}
