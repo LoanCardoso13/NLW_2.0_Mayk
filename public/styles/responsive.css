@@ -67,7 +67,7 @@
         background-color: var(--color-secondary-dark);
     }
 }
-@media (min-height: 900px) {
+@media (min-height: 800px) {
     html body {
         height: 100vh;
     }    
@@ -171,5 +171,10 @@
     .buttons-container a {
         padding: 0 !important;
         justify-content: center;
+    }
+}
+@media (max-width: 400px) {
+    html {
+        font-size: 60%;
     }
 }
