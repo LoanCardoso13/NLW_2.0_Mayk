@@ -224,3 +224,8 @@ h2, h3, h4, h5, h6, p {
 #search-results .cards .card .finish .button img {
     margin-right: 1rem;
 }
+#search-results .no-results {
+    max-width: 18.75rem;
+    margin: 5rem auto;
+    text-align: center;
+}

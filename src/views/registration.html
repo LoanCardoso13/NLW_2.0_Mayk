@@ -28,7 +28,7 @@
 {% endblock header %}
 
 {% block content %}
-    <form action="/registered" method="POST">
+    <form action="/save-class" method="POST">
 
         <fieldset>
 
@@ -84,13 +84,12 @@
                     required
                 >
                     <option value="">Please select the subject you want to teach</option>
-                    <option value="Biology">Biology</option>
-                    <option value="Math">Math</option>
-                    <option value="Physics">Physics</option>
-                    <option value="Chemistry">Chemistry</option>
-                    <option value="English">English</option>
-                    <option value="History">History</option>
-                    <option value="Geography">Geography</option>
+                    {% for subject in subjects %}
+                        <option value="{{ loop.index }}">
+                            {{ subject }}
+                        </option>
+                    {% endfor %}
+
                 </select>
             </div>
 
@@ -122,26 +121,19 @@
                         required
                     >
                         <option value="">Select weekday</option>
-                        <option value="Monday">Monday</option>
-                        <option value="Tuesday">Tuesday</option>
-                        <option value="Wednesday">Wednesday</option>
-                        <option value="Thursday">Thursday</option>
-                        <option value="Friday">Friday</option>
+                        {% for weekday in weekdays %}
+                            <option value="{{ loop.index0 }}">
+                                {{ weekday }}
+                            </option>
+                        {% endfor %}
                     </select>
                 </div>
 
                 <div class="field">
                     <label for="from">From</label>
-                    {# <select 
-                        name="from"
-                        onchange="changeColor2()"
-                        required  
-                    >
-                        <option value="">Start</option>
-                    </select> #}
                     <input 
                         type="time"
-                        name="from[]"
+                        name="time_from[]"
                         onchange="changeColor3()"
                         required
                     >
@@ -149,16 +141,9 @@
 
                 <div class="field">
                     <label for="to">To</label>
-                    {# <select 
-                        name="to"
-                        onchange="changeColor2()"
-                        required
-                    >
-                        <option value="">End</option>
-                    </select> #}
                     <input 
                         type="time"
-                        name="to[]"
+                        name="time_to[]"
                         onchange="changeColor3()"
                         required
                     >
