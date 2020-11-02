@@ -1,7 +1,7 @@
 // const db = require('./database/db');
 const Database = require('./database/db');
 
-const { subjects, weekdays, getSubject, convertHourToMinutes } = require('./utils/format');
+const { subjects, weekdays, getSubject, getWeekday, convertHourToMinutes, convertMinutesToHour } = require('./utils/format');
 
 function pageLanding(req, res) {
     return res.render('index.html');
@@ -91,10 +91,17 @@ async function pageStudy(req, res) {
         console.log(proffys);
         const classes = await db.all(query2);
         const class_schedules = await db.all(query3);
+        // console.log(class_schedules);
 
         for (i = 0; i < classes.length; i++) {
             classes[i].subject = getSubject(classes[i].subject);
         }
+        for (i = 0; i < class_schedules.length; i++) {
+            class_schedules[i].weekday = getWeekday(class_schedules[i].weekday);
+            class_schedules[i].time_from = convertMinutesToHour(class_schedules[i].time_from);
+            class_schedules[i].time_to = convertMinutesToHour(class_schedules[i].time_to);
+        }
+        console.log(class_schedules);
 
         return res.render('search-results.html', {proffys, classes, class_schedules, subjects, weekdays});
     } catch(error) {
@@ -107,7 +114,7 @@ function pageGiveClasses(req, res) {
     return res.render('registration.html', {subjects, weekdays});
 }
 
-async function saveClasses(req,res) {
+async function saveClasses(req, res) {
     const createProffy = require('./database/createProffy');
 
     // console.log(req.body)
@@ -138,15 +145,19 @@ async function saveClasses(req,res) {
         const db = await Database;
         await createProffy(db, {proffyValue, classValue, classScheduleValues});
 
-        let queryString = "?subject=" + req.body.subject;
-        queryString += "?weekday=" + req.body.weekday[0];
-        queryString += "?time=" + req.body.time_from[0];
-        return res.redirect('/search-tutor' + queryString);
+        // let queryString = "?subject=" + req.body.subject;
+        // queryString += "?weekday=" + req.body.weekday[0];
+        // queryString += "?time=" + req.body.time_from[0];
+        return res.redirect('/registered');
     } catch (error) {
         console.log(error);
     }
 
     
+}
+
+function pageModal(req, res) {
+    res.render('modal.html');
 }
 
 function addProffyToDatabase(req, res) {
@@ -244,12 +255,27 @@ async function filterProffys(req, res) {
         )
         AND classes.subject = ${filters.subject};
     `
+    const query2 = `
+        SELECT classes.*, class_schedule.*
+        FROM classes
+        JOIN class_schedule ON (class_schedule.class_id = classes.id)
+        WHERE EXISTS (
+            SELECT class_schedule.*
+            FROM class_schedule
+            WHERE class_schedule.class_id = classes.id
+            AND class_schedule.weekday = ${filters.weekday}
+            AND class_schedule.time_from <= ${timeToMinutes}
+            AND class_schedule.time_to > ${timeToMinutes}
+        )
+        AND classes.subject = ${filters.subject};
+    `
 
     try {
         const db = await Database;
 
         const proffys = await db.all(query);
         const classes = proffys;
+        const class_schedules = await db.all(query2);
         for (i = 0; i < classes.length; i++) {
             classes[i].subject = getSubject(classes[i].subject);
         }
@@ -263,7 +289,7 @@ async function filterProffys(req, res) {
         //     classes[i].subject = getSubject(classes[i].subject);
         // }
 
-        return res.render('search-results.html', { proffys, classes, subjects, weekdays, filters});
+        return res.render('search-results.html', { proffys, classes, class_schedules, subjects, weekdays, filters});
     } catch(error) {
         console.log(error);
     }
@@ -306,5 +332,6 @@ module.exports = {
     pageStudy,
     pageGiveClasses,
     saveClasses,
+    pageModal,
     filterProffys
 }

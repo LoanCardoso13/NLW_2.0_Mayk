@@ -94,11 +94,14 @@
 
     <div class="cards">
 
+        {% set count = 0 %}
+
         {% for proffy in proffys %}
 
             {% for class in classes %}
 
                 {% if class.proffy_id == proffy.id %}
+
                     <div class="card">
 
                         <div class="identif">
@@ -113,11 +116,12 @@
                             <p>{{ proffy.bio | striptags(true) | escape | nl2br }}</p>
                         </div>
 
-                        {# <div class="time-table">
+                        <div class="time-table">
 
                             {% for i in range(0,5) %}
+
                             
-                                {% if weekdays[i] in proffy.weekday %}
+                                {% if weekdays[i] == class_schedules[proffy.id-1+count].weekday %}
 
                                     <div class="weekday">
                                         <span>
@@ -126,7 +130,7 @@
                                         </span>
                                         <span>
                                             <p>Time</p>
-                                            <h3>{{ proffy.fromStart[count] }}-{{ proffy.toEnd[count] }}</h3>
+                                            <h3>{{ class_schedules[proffy.id-1+count].time_from }} - {{ class_schedules[proffy.id-1+count].time_to }}</h3>
                                         </span>
                                     </div>
                                     {% set count = count + 1 %}
@@ -145,7 +149,10 @@
                                 
                             {% endfor %}
 
-                        </div> #}
+                            {% set count = count - 1 %}
+
+
+                        </div>
 
                         <div class="finish">
                             <span>
@@ -167,8 +174,6 @@
                 {% endif %}
 
             {% endfor %}
-
-            {% set count = 0 %}
 
         {% endfor %}
 

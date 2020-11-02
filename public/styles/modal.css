@@ -5,7 +5,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: #8257E5 url("/assets/success-background.svg") no-repeat;
+    background: var(--color-primary) url("/assets/success-background.svg") no-repeat;
     background-position: 15vw 15vh;
     flex-direction: column;
     justify-content: center;
@@ -14,33 +14,31 @@
     color: white;
 }
 .modal h1 {
-    font-family: 'Archivo', sans-serif;
-    font-weight: bold;
-    font-size: 54px;
-    line-height: 42px;
+    font-size: 3.375rem;
+    line-height: 2.625rem;
+    margin-bottom: 2rem;
 }
 .modal p {
-    font-family: 'Poppins', sans-serif;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 26px;
-    color: #D4C2FF;
+    font-size: 1rem;
+    line-height: 1.625rem;
+    color: var(--color-text-in-primary);
+    margin-bottom: 1rem;
 }
 .modal a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 176px;
-    height: 56px;
-    background: #04D361;
-    border-radius: 8px;
+    width: 11rem;
+    height: 3.5rem;
+    background: var(--color-secondary);
+    border-radius: .5rem;
     font-family: 'Archivo', sans-serif;
     font-weight: 600;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 1rem;
+    line-height: 1.625rem;
     color: white;
-    transition: 400ms;
+    transition: background 400ms;
 }
 .modal a:hover {
-    background: #04BF58;
+    background: var(--color-secondary-dark);
 }

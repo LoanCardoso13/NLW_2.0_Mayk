@@ -8,6 +8,7 @@ const {
     pageStudy,
     pageGiveClasses,
     saveClasses,
+    pageModal,
     filterProffys
 } = require('./pages');
 
@@ -29,5 +30,6 @@ server
     .get('/search-tutor', pageStudy)
     .get('/narrow-search', filterProffys)
     .post('/save-class', saveClasses)
+    .get('/registered', pageModal)
     // Running server
     .listen(3000);  

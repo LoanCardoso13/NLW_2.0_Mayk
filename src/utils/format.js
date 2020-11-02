@@ -9,13 +9,11 @@ const subjects = [
 ];
 
 const weekdays = [
-    'Sunday',
     'Monday',
     'Tuesday',
     'Wednesday',
     'Thursday',
-    'Friday',
-    'Saturday'
+    'Friday'
 ];
 
 function getSubject(subjectNumber) {
@@ -28,9 +26,22 @@ function convertHourToMinutes(time) {
     return Number(hours * 60) + Number(minutes);
 }
 
+function getWeekday(weekdayNumber) {
+    const position = weekdayNumber;
+    return weekdays[position];
+}
+
+function convertMinutesToHour(time) {
+    const hour = Math.floor(time/60);
+    const minutes = time % 60;
+    return ("0" + String(hour)).slice(-2) + ":" + ( "0" + String(minutes)).slice(-2);
+}
+
 module.exports = {
     subjects,
     weekdays,
     getSubject,
-    convertHourToMinutes
+    convertHourToMinutes,
+    convertMinutesToHour,
+    getWeekday
 }
