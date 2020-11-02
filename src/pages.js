@@ -239,7 +239,7 @@ async function filterProffys(req, res) {
     // `
 
     const timeToMinutes = convertHourToMinutes(filters.time);
-    console.log(timeToMinutes);
+    // console.log(timeToMinutes);
 
     const query = `
         SELECT classes.*, proffys.*
@@ -279,7 +279,13 @@ async function filterProffys(req, res) {
         for (i = 0; i < classes.length; i++) {
             classes[i].subject = getSubject(classes[i].subject);
         }
+        for (i = 0; i < class_schedules.length; i++) {
+            class_schedules[i].weekday = getWeekday(class_schedules[i].weekday);
+            class_schedules[i].time_from = convertMinutesToHour(class_schedules[i].time_from);
+            class_schedules[i].time_to = convertMinutesToHour(class_schedules[i].time_to);
+        }
         console.log(proffys);
+        console.log(class_schedules);
 
         // const proffys = await db.all(query1);
         // const classes = await db.all(query2);

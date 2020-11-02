@@ -116,7 +116,11 @@
                             <p>{{ proffy.bio | striptags(true) | escape | nl2br }}</p>
                         </div>
 
-                        <div class="time-table">
+                        {% if filters %}
+                            {% set dummy = "noShow" %}
+                        {% endif %}
+                        
+                        <div class="time-table {{ dummy }}">
 
                             {% for i in range(0,5) %}
 

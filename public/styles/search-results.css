@@ -143,6 +143,9 @@ h2, h3, h4, h5, h6, p {
     display: flex;
     margin-bottom: 2rem;
 }
+#search-results .cards .card .noShow {
+    display: none;
+}
 #search-results .cards .card .time-table .weekday {
     width: 8.5rem;
     margin-right: 1rem;
