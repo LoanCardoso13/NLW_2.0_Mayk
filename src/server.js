@@ -1,8 +1,6 @@
 const express = require("express");
 const server = express();
 
-// const db = require('./database/db');
-
 const {
     pageLanding,
     pageStudy,
@@ -26,7 +24,6 @@ server
     // Routes of application
     .get('/', pageLanding)
     .get('/registration', pageGiveClasses)
-    // .get('/registered', addProffyToDatabase)
     .get('/search-tutor', pageStudy)
     .get('/narrow-search', filterProffys)
     .post('/save-class', saveClasses)

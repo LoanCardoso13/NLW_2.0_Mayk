@@ -92,100 +92,100 @@
 
     {% else %}
 
-    <div class="cards">
+        {% if fieldBlank %}
+            <p class="no-results">{{ fieldBlank }}</p>
+        {% endif %}
 
-        {% set count = 0 %}
+        <div class="cards">
 
-        {% for proffy in proffys %}
+            {% set count = 0 %}
 
-            {% for class in classes %}
+            {% for proffy in proffys %}
 
-                {% if class.proffy_id == proffy.id %}
+                {% for class in classes %}
 
-                    <div class="card">
+                    {% if class.proffy_id == proffy.id %}
 
-                        <div class="identif">
-                            <img src="{{ proffy.avatar }}" alt="{{ proffy.name }}">
-                            <span>
-                                <h2>{{ proffy.name }}</h2>
-                                <p>{{ class.subject }}</p>
-                            </span>
-                        </div>
+                        <div class="card">
 
-                        <div class="presentation">
-                            <p>{{ proffy.bio | striptags(true) | escape | nl2br }}</p>
-                        </div>
+                            <div class="identif">
+                                <img src="{{ proffy.avatar }}" alt="{{ proffy.name }}">
+                                <span>
+                                    <h2>{{ proffy.name }}</h2>
+                                    <p>{{ class.subject }}</p>
+                                </span>
+                            </div>
 
-                        {% if filters %}
-                            {% set dummy = "noShow" %}
-                        {% endif %}
-                        
-                        <div class="time-table {{ dummy }}">
+                            <div class="presentation">
+                                <p>{{ proffy.bio | striptags(true) | escape | nl2br }}</p>
+                            </div>
 
-                            {% for i in range(0,5) %}
-
+                            {% if filters %}
+                                {% set dummy = "noShow" %}
+                            {% endif %}
                             
-                                {% if weekdays[i] == class_schedules[proffy.id-1+count].weekday %}
+                            <div class="time-table {{ dummy }}">
 
-                                    <div class="weekday">
-                                        <span>
-                                            <p>Day</p>
-                                            <h3>{{ weekdays[i] }}</h3>
-                                        </span>
-                                        <span>
-                                            <p>Time</p>
-                                            <h3>{{ class_schedules[proffy.id-1+count].time_from }} - {{ class_schedules[proffy.id-1+count].time_to }}</h3>
-                                        </span>
-                                    </div>
-                                    {% set count = count + 1 %}
-                                {% else %}
-                                    <div class="weekday notChosen">
-                                        <span>
-                                            <p>Day</p>
-                                            <h3>{{ weekdays[i] }}</h3>
-                                        </span>
-                                        <span>
-                                            <p>Time</p>
-                                            <h3>-</h3>
-                                        </span>
-                                    </div>
-                                {% endif %}
+                                {% for i in range(0,5) %}
                                 
-                            {% endfor %}
+                                    {% if weekdays[i] == class_schedules[proffy.id-1+count].weekday %}
 
-                            {% set count = count - 1 %}
+                                        <div class="weekday">
+                                            <span>
+                                                <p>Day</p>
+                                                <h3>{{ weekdays[i] }}</h3>
+                                            </span>
+                                            <span>
+                                                <p>Time</p>
+                                                <h3>{{ class_schedules[proffy.id-1+count].time_from }} - {{ class_schedules[proffy.id-1+count].time_to }}</h3>
+                                            </span>
+                                        </div>
+                                        {% set count = count + 1 %}
+                                    {% else %}
+                                        <div class="weekday notChosen">
+                                            <span>
+                                                <p>Day</p>
+                                                <h3>{{ weekdays[i] }}</h3>
+                                            </span>
+                                            <span>
+                                                <p>Time</p>
+                                                <h3>-</h3>
+                                            </span>
+                                        </div>
+                                    {% endif %}
+                                    
+                                {% endfor %}
 
+                                {% set count = count - 1 %}
+
+                            </div>
+
+                            <div class="finish">
+                                <span>
+                                    <p>Price/hour</p>
+                                    <h2>C$ {{ class.cost }}</h2>
+                                </span>
+                                <a 
+                                    href="https://api.whatsapp.com/send?1=en_US&phone=1{{ proffy.whatsapp }}&text=I am interested in your {{ class.subject }} class {{ proffy.name }}" 
+                                    target="_blank"
+                                    class="button"
+                                >
+                                    <img src="./assets/whatsapp.svg" alt="whatsapp">
+                                    Contact me
+                                </a>
+                            </div>
 
                         </div>
 
-                        <div class="finish">
-                            <span>
-                                <p>Price/hour</p>
-                                <h2>C$ {{ class.cost }}</h2>
-                            </span>
-                            <a 
-                                href="https://api.whatsapp.com/send?1=en_US&phone=1{{ proffy.whatsapp }}&text=I am interested in your {{ class.subject }} class {{ proffy.name }}" 
-                                target="_blank"
-                                class="button"
-                            >
-                                <img src="./assets/whatsapp.svg" alt="whatsapp">
-                                Contact me
-                            </a>
-                        </div>
+                    {% endif %}
 
-                    </div>
-
-                {% endif %}
+                {% endfor %}
 
             {% endfor %}
 
-        {% endfor %}
-
-    </div>
+        </div>
 
     {% endif %}
-
-    
 
 {% endblock content %}
 
