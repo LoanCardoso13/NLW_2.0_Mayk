@@ -1,3 +1,36 @@
+<h1 align="center">Proffy</h1>
+
+This application was developed in plain HTML, CSS and JavaScript, powered by 
+NunJucks template engine. The database is managed using sqlite-async. It consists
+of an environment where students go seek assistance for subjects they are 
+struggling with in school, at the weekday and time they choose. 
+
+The landing page has two options, one for students seeking online classes, the
+other for tutors seeking to register themselves in the database to give classes. 
+
+By opening the search tutors page, students will find all the 
+tutors in the database, and by scrolling down they can see the scheduling 
+availability and tutoring subject of each one. There's an option to send a 
+whatsapp message
+for the tutor, so the student can reach his chosen tutor in this way. The 
+classes are meant to be ministered online. By selecting dropdown options in this
+page and clicking "filter", the student can then filter from the database his 
+specified subject, weekday and time. The resulting tutors from this search will
+not display its schedule availability since it's already implicit that it aligns
+ with the student's searching parameters.
+
+When opening the give classes page, the tutor will fill a form and register him
+(her)self in the database. It is mandatory to fill every field except the 
+biographic text. All this will be displayed for students (except whatsapp
+number) upon using the above described search tutors page. The whatsapp number
+will be used if the student click on the option to send a whatsapp message. 
+All data will be 
+stored in the sqlite database file. The avatar for the profile should be linked
+from an already existed profile, such as github for instance, so what is stored
+is the web address of the image. 
+
+<h1></h1>
+
 ## 🛠️ Installation Steps
 
 1. Clone the repository
@@ -28,6 +61,52 @@ npm start
 Access [Proffy](http://localhost:3000) through port 3000
 ```bash
 http://localhost:3000
+```
+
+Your directory tree will look like this:
+```
+src
+ ┣ database
+ ┃ ┣ createProffy.js
+ ┃ ┣ database.sqlite
+ ┃ ┗ db.js
+ ┣ utils
+ ┃ ┗ format.js
+ ┣ views
+ ┃ ┣ index.html
+ ┃ ┣ layout.html
+ ┃ ┣ modal.html
+ ┃ ┣ registration.html
+ ┃ ┗ search-results.html
+ ┣ pages.js
+ ┗ server.js
+```
+
+```
+public
+ ┣ assets
+ ┃ ┣ back.svg
+ ┃ ┣ give-classes.svg
+ ┃ ┣ landing.svg
+ ┃ ┣ logo.svg
+ ┃ ┣ purple-heart.svg
+ ┃ ┣ rocket.svg
+ ┃ ┣ smile.svg
+ ┃ ┣ study.svg
+ ┃ ┣ success-background.svg
+ ┃ ┣ success-check-icon.svg
+ ┃ ┣ warning.svg
+ ┃ ┗ whatsapp.svg
+ ┣ scripts
+ ┃ ┣ registration.js
+ ┃ ┗ search-results.js
+ ┗ styles
+ ┃ ┣ main.css
+ ┃ ┣ modal.css
+ ┃ ┣ page-home.css
+ ┃ ┣ registration.css
+ ┃ ┣ responsive.css
+ ┃ ┗ search-results.css
 ```
 
 <h1 align="center">Hi 👋, I'm Loan Cardoso</h1>
